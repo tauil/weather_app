@@ -1,12 +1,40 @@
-<h1><%= t("weather.title", city_name: @city_name, country_name: @country_name) %></h1>
-
-<p><%= @weather.weather.first.main %></p>
-<p><%= @weather.weather.first.description %></p>
-<p><%= @weather.main.temp %></p>
-<p><%= @weather.main.pressure %></p>
-<p><%= @weather.main.humidity %></p>
-<p><%= @weather.main.temp_min %></p>
-<p><%= @weather.main.temp_max %></p>
-
-<p><%= @weather.wind.speed %></p>
-<p><%= @weather.wind.deg %></p>
+<div class="main-card-wide mdl-card mdl-shadow--2dp">
+  <div class="mdl-card__supporting-text">
+    <h1><%= t("weather.title", city_name: @city_name, country_name: @country_name) %></h1>
+  </div>
+  <div class="mdl-card__actions mdl-card--border">
+    <ul class="search-list-item mdl-list">
+      <li class="mdl-list__item">
+        <span><%= content_tag :strong, t("label.weather.main") %>: <%= @weather.weather.first.main %></span>
+      </li>
+      <li class="mdl-list__item">
+        <span><%= content_tag :strong, t("label.weather.description") %>: <%= @weather.weather.first.description %></span>
+      </li>
+      <li class="mdl-list__item">
+        <span><%= content_tag :strong, t("label.weather.temp") %>: <%= @weather.main.temp %></span>
+      </li>
+      <li class="mdl-list__item">
+        <span><%= content_tag :strong, t("label.weather.pressure") %>: <%= @weather.main.pressure %></span>
+      </li>
+      <li class="mdl-list__item">
+        <span><%= content_tag :strong, t("label.weather.humidity") %>: <%= @weather.main.humidity %></span>
+      </li>
+      <li class="mdl-list__item">
+        <span><%= content_tag :strong, t("label.weather.temp_min") %>: <%= @weather.main.temp_min %></span>
+      </li>
+      <li class="mdl-list__item">
+        <span><%= content_tag :strong, t("label.weather.temp_max") %>: <%= @weather.main.temp_max %></span>
+      </li>
+      <li class="mdl-list__item">
+        <span><%= content_tag :strong, t("label.weather.wind_speed") %>: <%= @weather.wind.speed %></span>
+      </li>
+      <li class="mdl-list__item">
+        <span><%= content_tag :strong, t("label.weather.wind_deg") %>: <%= @weather.wind.deg %></span>
+      </li>
+      </li>
+    </ul>
+  </div>
+  <div class="mdl-card__actions mdl-card--border">
+    <%= link_to t("buttons.back"), root_path, class: 'mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect' %>
+  </div>
+</div>

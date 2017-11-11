@@ -36,6 +36,20 @@ en:
   attributes:
     country: Country
     city: City
+    weather:
+      main: Weather
+      description: Description
+      temp: Temperature
+      pressure: Pressure
+      humidity: Humidity
+      temp_min: Min Temperature
+      temp_max: Max Temperature
+      wind_speed: Wind Speed
+      wind_deg: Wind Degree
 
   weather:
     title: "How's the weather in %{city_name}, %{country_name}:"
+
+  buttons:
+    see_weather: See weather
+    back: Back

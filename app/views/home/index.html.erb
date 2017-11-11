@@ -1,13 +1,20 @@
-<%= form_tag weather_path, method: :get, name: 'weather' do %>
-  <div>
-    <%= label_tag "[weather][city_name]", t("attributes.city") %>
-    <%= text_field_tag "[weather][city_name]" %>
+<div class="main-card-wide mdl-card mdl-shadow--2dp">
+  <div class="mdl-card__supporting-text">
+    <%= t("weather.title", city_name: @city_name, country_name: @country_name) %>
   </div>
+  <div class="mdl-card__actions mdl-card--border">
+    <%= form_tag weather_path, method: :get, name: 'weather' do %>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <%= text_field_tag "[weather][city_name]", '', class: 'mdl-textfield__input' %>
+        <%= label_tag "[weather][city_name]", t("attributes.city"), class: 'mdl-textfield__label' %>
+      </div>
 
-  <div>
-    <%= label_tag "[weather][country_name]", t("attributes.country") %>
-    <%= text_field_tag "[weather][country_name]" %>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <%= text_field_tag "[weather][country_name]", '', class: 'mdl-textfield__input' %>
+        <%= label_tag "[weather][country_name]", t("attributes.country"), class: 'mdl-textfield__label' %>
+      </div>
+
+      <%= submit_tag t("buttons.see_weather"), class: 'mdl-button mdl-js-button mdl-button--raised mdl-button--colored' %>
+    <% end %>
   </div>
-
-  <%= submit_tag%>
-<% end %>
+</div>
