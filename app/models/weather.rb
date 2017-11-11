@@ -11,7 +11,6 @@ class Weather
     path = "/data/2.5/weather?q=#{params}&appid=#{self.api_key}"
     endpoint = [self.api_endpoint, path].join
     uri = URI(endpoint)
-
     response = Net::HTTP.get(uri)
     JSON.parse(response, object_class: OpenStruct)
   end
