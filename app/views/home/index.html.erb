@@ -1,0 +1,13 @@
+<%= form_tag weather_path, method: :get, name: 'weather' do %>
+  <div>
+    <%= label_tag "[weather][city_name]", t("attributes.city") %>
+    <%= text_field_tag "[weather][city_name]" %>
+  </div>
+
+  <div>
+    <%= label_tag "[weather][country_name]", t("attributes.country") %>
+    <%= text_field_tag "[weather][country_name]" %>
+  </div>
+
+  <%= submit_tag%>
+<% end %>

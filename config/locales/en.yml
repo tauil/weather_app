@@ -30,4 +30,12 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  home:
+    title: Weather App
+
+  attributes:
+    country: Country
+    city: City
+
+  weather:
+    title: "How's the weather in %{city_name}, %{country_name}:"
